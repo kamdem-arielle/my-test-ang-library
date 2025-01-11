@@ -52,6 +52,9 @@
 
 .button[primary] {
   background-color: var(--button-primary-bg-color);
+  span.ripple{
+    background-color: #ededed4f !important;
+  }
 }
 
 .button[primary2] {

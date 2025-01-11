@@ -1,4 +1,4 @@
-<button #FormButtonRef class="button" [ngStyle]="{'width':width}" (click)="addRippleEffect($event)" >
+<button #FormButtonRef class="button" [ngStyle]="{ width: width ? width: '' }" (click)="addRippleEffect($event)">
     <ng-content></ng-content>
-<span  #ButtonSpanRef class="ripple" [ngStyle]="{ display: displayStyle }"></span>
+    <span #ButtonSpanRef class="ripple" [ngStyle]="{ display: displayStyle }"></span>
 </button>
