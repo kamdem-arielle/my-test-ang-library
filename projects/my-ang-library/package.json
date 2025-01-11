@@ -3,10 +3,16 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0"
+    "@angular/core": "^19.0.0",
+    "my-ang-library": "file:../../dist/my-ang-library"
   },
   "dependencies": {
+    
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "assets": [
+    "src/lib/themes",
+    "src/lib/assets/fonts"
+  ]
 }

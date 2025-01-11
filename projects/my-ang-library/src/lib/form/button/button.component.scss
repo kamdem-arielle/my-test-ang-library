@@ -1,0 +1,62 @@
+
+@use '../../../../themes/variables' as *;
+@import "../../../../themes/variables";
+
+// @font-face {
+//   font-family: 'Nunito';
+//   src:url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap') format('truetype');
+//   font-style: normal;
+//   font-display: swap;
+// }
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXX3I6Li01BKofIMNaORs7nczIHNHI.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+.button {
+  box-sizing:$button-box-sizing;
+  display: $button-display;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  min-height: $button-min-height;
+  min-width: $button-min-width;
+  opacity: $button-opacity;
+  cursor: $button-cursor;
+  text-align: $button-text-align;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  transition: opacity 0.3s ease;
+  color: var(--button-text-color);
+  // font-family: $button-font-family;
+  font-family: 'Avenir Rounded', sans-serif;
+  // font-family: "Nunito", serif;
+  }
+  
+  .button:hover {
+    opacity: $button-opacity-hover;
+  }
+
+  .button[primary]{
+    background-color: var(--button-primary-bg-color);
+  }
+
+  .button[primary2]{
+    background-color: var(--button-primary2-bg-color);
+  }
+
+  .button[alert]{
+    background-color: var(--button-alert-bg-color);
+  }
+
+  .button[call-modal]{
+    background-color: var(--button-call-modal-bg-color);
+  }
+
+  .button[enable-modal]{
+    background-color: var(--button-enable-modal-bg-color);
+  }
