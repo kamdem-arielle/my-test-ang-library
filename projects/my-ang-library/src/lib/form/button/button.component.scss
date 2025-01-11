@@ -1,24 +1,7 @@
-
-@use '../../../../themes/variables' as *;
-@import "../../../../themes/variables";
-
-// @font-face {
-//   font-family: 'Nunito';
-//   src:url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap') format('truetype');
-//   font-style: normal;
-//   font-display: swap;
-// }
-@font-face {
-  font-family: 'Nunito';
-  font-style: italic;
-  font-weight: 200 1000;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXX3I6Li01BKofIMNaORs7nczIHNHI.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
+@use "../../../../themes/variables" as *;
 
 .button {
-  box-sizing:$button-box-sizing;
+  box-sizing: $button-box-sizing;
   display: $button-display;
   border: $button-border;
   border-radius: $button-border-radius;
@@ -32,31 +15,57 @@
   line-height: $button-line-height;
   transition: opacity 0.3s ease;
   color: var(--button-text-color);
-  // font-family: $button-font-family;
-  font-family: 'Avenir Rounded', sans-serif;
-  // font-family: "Nunito", serif;
-  }
-  
-  .button:hover {
-    opacity: $button-opacity-hover;
+  font-family: "Avenir Rounded", sans-serif;
+  position: relative;
+  overflow: $button-overflow;
+}
+
+.button span.ripple {
+  position: absolute;
+  border-radius: 50%; /* To make it round */
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100px;
+  height: 100px;
+  margin-top: -50px; /* to put the center of the ripple at the mouse position from the right */
+  margin-left: -50px; /* to put the center of the ripple at the mouse position from the bottom */
+  animation: ripple 1s;
+  opacity: 0;
+  display: none;
+}
+
+/* Add ripple animation */
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
   }
 
-  .button[primary]{
-    background-color: var(--button-primary-bg-color);
+  to {
+    opacity: 0;
+    transform: scale(10);
   }
+}
 
-  .button[primary2]{
-    background-color: var(--button-primary2-bg-color);
-  }
+.button:hover {
+  opacity: $button-opacity-hover;
+}
 
-  .button[alert]{
-    background-color: var(--button-alert-bg-color);
-  }
+.button[primary] {
+  background-color: var(--button-primary-bg-color);
+}
 
-  .button[call-modal]{
-    background-color: var(--button-call-modal-bg-color);
-  }
+.button[primary2] {
+  background-color: var(--button-primary2-bg-color);
+}
 
-  .button[enable-modal]{
-    background-color: var(--button-enable-modal-bg-color);
-  }
+.button[alert] {
+  background-color: var(--button-alert-bg-color);
+}
+
+.button[callModal] {
+  background-color: var(--button-call-modal-bg-color);
+}
+
+.button[enableModal] {
+  background-color: var(--button-enable-modal-bg-color);
+}

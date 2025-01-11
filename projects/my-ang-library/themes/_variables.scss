@@ -1,16 +1,4 @@
-// @font-face {
-//     font-family:'Avenir Rounded';
-//     src: url('/projects/my-ang-library/src/lib/assets/fonts/Nunito-Regular.ttf') format('truetype');
-//     font-weight: 400;
-//     font-style: normal;
-// }
 
-// @font-face {
-//     font-family: 'Avenir Rounded';
-//     src:url('./Nunito-Regular.ttf') format('truetype');
-//     font-style: normal;
-//     font-display: swap;
-//   }
 
 // Common SCSS variables for all themes
 $button-padding: 10px 20px;
@@ -18,7 +6,8 @@ $button-border-radius: 6px;
 $button-font-size: 16px;
 $button-min-height:50px;
 $button-min-width:150px;
-$button-display:inline-block;
+$button-display:block;
+$button-overflow:hidden;
 $button-text-align:center;
 $button-line-height:1.2;
 $button-font-size:1rem;
@@ -27,25 +16,4 @@ $button-border:0;
 $button-cursor:pointer;
 $button-opacity:1;
 $button-opacity-hover:1;
-// $button-font-family: 'Avenir Rounded';
 
-// .button {
-//     background-color:red;
-//     color: #fff;
-//   box-sizing: border-box;
-//   display: inline-block;
-//   border: 0;
-//   border-radius: 10px;
-//   padding: 15px;
-//   min-height: 30px;
-//   min-width: 120px;
-//   opacity: 0.8;
-  
-  
-//   cursor: pointer;
-//   text-align: center;
-//   font-size: 1rem;
-//   line-height: 1.2;
-//   transition: opacity 0.3s ease;
-//   }
-  
