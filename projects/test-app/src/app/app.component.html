@@ -1,12 +1,23 @@
-<div class="row py-4">
+<div class="row py-4 pt-5">
+
   <div class="col">
-    <arielle-button></arielle-button>
+    <arielle-form-button [alert]="true" >Button</arielle-form-button>
   </div>
   <div class="col">
-    <arielle-form-button [primary]="true">Arielle is the best</arielle-form-button>
+    <arielle-form-button [primary]="true" >Button</arielle-form-button>
   </div>
   <div class="col">
-    <arielle-input></arielle-input>
+    <arielle-form-button [primary2]="true" >Button</arielle-form-button>
   </div>
+  <div class="col">
+    <arielle-form-button [callModal]="true" >
+      <fa-icon [icon]="faCoffee" arielle-button-icon ></fa-icon>
+     
+    </arielle-form-button>
+  </div>
+  <div class="col">
+    <arielle-form-button [enableModal]="true" >Button</arielle-form-button>
+  </div>
+
 
 </div>

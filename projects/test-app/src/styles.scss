@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
+@use 'my-ang-library/themes/my-ang.scss';
+@use 'my-ang-library/themes/_font.scss';
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
-@import '../../my-ang-library/src/lib/themes/default.scss';
+
 
