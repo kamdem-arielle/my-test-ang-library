@@ -3,6 +3,8 @@
 .button {
   box-sizing: $button-box-sizing;
   display: $button-display;
+  justify-content: $button-justify-content;
+  align-items: $button-align-items;
   border: $button-border;
   border-radius: $button-border-radius;
   padding: $button-padding;
@@ -18,6 +20,13 @@
   font-family: "Avenir Rounded", sans-serif;
   position: relative;
   overflow: $button-overflow;
+
+  svg{
+    margin-right: 8px !important; /* Adjust spacing between icon and text */
+    font-size: 16px;   /* Adjust icon size */
+    // vertical-align: middle; /* Align icon with text */
+  }
+  
 }
 
 .button span.ripple {
@@ -61,13 +70,23 @@
 }
 
  /* Style the icon using the attribute selector */
-.button [arielle-button-icon]{
-  .svg-inline--fa{
+ ::ng-deep .button [arielle-button-icon] svg{
+
+  // .svg-inline--fa{
+  //   margin-right: 8px !important; /* Adjust spacing between icon and text */
+  //   font-size: 16px;   /* Adjust icon size */
+  //   // vertical-align: middle; /* Align icon with text */
+  // 
     margin-right: 8px !important; /* Adjust spacing between icon and text */
     font-size: 16px;   /* Adjust icon size */
-    // vertical-align: middle; /* Align icon with text */
-  }
-  margin-right: 8px !important; /* Adjust spacing between icon and text */
-  font-size: 16px;   /* Adjust icon size */
-  vertical-align: middle; /* Align icon with text */
+  
+  // margin-right: 8px !important; /* Adjust spacing between icon and text */
+  // font-size: 16px;   /* Adjust icon size */
+  // vertical-align: middle; /* Align icon with text */
 }
+
+::ng-deep .button [arielle-button-icon]:last-child svg {
+  margin-right: 0 !important; /* Remove margin if there is no sibling element */
+}
+
+
