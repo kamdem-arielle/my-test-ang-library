@@ -22,28 +22,15 @@
 
 .button span.ripple {
   position: absolute;
-  border-radius: 50%; /* To make it round */
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 100px;
-  height: 100px;
-  margin-top: -50px; /* to put the center of the ripple at the mouse position from the right */
-  margin-left: -50px; /* to put the center of the ripple at the mouse position from the bottom */
-  animation: ripple 1s;
+  border-radius: $button-ripple-border-radius;
+  background-color: $button-ripple-background-color;
+  width: $button-ripple-width;
+  height: $button-ripple-height;
+  margin-top: $button-ripple-margin-top;
+  margin-left: $button-ripple-margin-left;
+  animation: $button-ripple-animation;
   opacity: 0;
   display: none;
-}
-
-/* Add ripple animation */
-@keyframes ripple {
-  from {
-    opacity: 1;
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(10);
-  }
 }
 
 .button:hover {
@@ -71,4 +58,16 @@
 
 .button[enableModal] {
   background-color: var(--button-enable-modal-bg-color);
+}
+
+ /* Style the icon using the attribute selector */
+.button [arielle-button-icon]{
+  .svg-inline--fa{
+    margin-right: 8px !important; /* Adjust spacing between icon and text */
+    font-size: 16px;   /* Adjust icon size */
+    // vertical-align: middle; /* Align icon with text */
+  }
+  margin-right: 8px !important; /* Adjust spacing between icon and text */
+  font-size: 16px;   /* Adjust icon size */
+  vertical-align: middle; /* Align icon with text */
 }

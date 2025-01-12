@@ -15,3 +15,26 @@ $button-cursor:pointer;
 $button-opacity:1;
 $button-opacity-hover:1;
 
+$button-ripple-border-radius: 50%;
+$button-ripple-background-color: rgba(0, 0, 0, 0.3);
+$button-ripple-width: 100px;
+$button-ripple-height: 100px;
+$button-ripple-margin-top: -50px;
+$button-ripple-margin-left: -50px;
+$button-ripple-animation: ripple 1s;
+
+/* Add ripple animation */
+@keyframes ripple {
+    from {
+      opacity: 1;
+      transform: scale(0);
+    }
+  
+    to {
+      opacity: 0;
+      transform: scale(10);
+    }
+}
+
+
+
