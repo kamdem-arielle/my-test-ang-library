@@ -1,9 +1,12 @@
 // Common SCSS variables for all themes
+
+//  SCSS variables for the button component
 $button-padding: 10px 20px;
 $button-border-radius: 10px;
 $button-font-size: 16px;
 $button-min-height:50px;
 $button-min-width:130px;
+$button-minimalist-extended-min-width:0px;
 $button-justify-content:center;
 $button-display:flex;
 $button-align-items:center;
@@ -17,6 +20,8 @@ $button-cursor:pointer;
 $button-opacity:1;
 $button-opacity-hover:1;
 
+
+//  SCSS variables for the button component ripple effect
 $button-ripple-border-radius: 50%;
 $button-ripple-background-color: rgba(0, 0, 0, 0.3);
 $button-ripple-width: 100px;
@@ -24,6 +29,13 @@ $button-ripple-height: 100px;
 $button-ripple-margin-top: -50px;
 $button-ripple-margin-left: -50px;
 $button-ripple-animation: ripple 1s;
+
+
+//  SCSS variables for the button component SVG icon
+$button-icon-svg-font-size : 16px;
+$button-minimalist-svg-margin-right : 0px;
+$button-extended-svg-margin-right : 8px;
+
 
 /* Add ripple animation */
 @keyframes ripple {

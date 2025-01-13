@@ -19,15 +19,13 @@
   color: var(--button-text-color);
   font-family: "Avenir Rounded", sans-serif;
   position: relative;
-  overflow: $button-overflow;
-
-  // svg{
-  //   margin-right: 0px !important; /* Adjust spacing between icon and text */
-  //   font-size: 16px;   /* Adjust icon size */
-  //   // vertical-align: middle; /* Align icon with text */
-  // }
-  
+  overflow: $button-overflow; 
 }
+
+.button[buttonMinimalist],.button[buttonExtended] {
+  min-width: $button-minimalist-extended-min-width !important;
+}
+
 
 .button span.ripple {
   position: absolute;
@@ -70,42 +68,21 @@
 }
 
 ::ng-deep .button [arielle-button-icon] svg{
-    font-size: 16px;   /* Adjust icon size */
+    font-size: $button-icon-svg-font-size;   /* Adjust icon size */
 }
 
 ::ng-deep .button[buttonMinimalist] {
  /* Style the icon using the attribute selector */
  [arielle-button-icon] svg{
-    margin-right: 0px !important; /* Adjust spacing between icon and text */
+    margin-right: $button-minimalist-svg-margin-right !important; /* Adjust spacing between icon and text */
 }
 }
 
 ::ng-deep .button[buttonExtended] {
   /* Style the icon using the attribute selector */
   [arielle-button-icon] svg{
-     margin-right: 8px !important; /* Adjust spacing between icon and text */
+     margin-right: $button-extended-svg-margin-right !important; /* Adjust spacing between icon and text */
  }
 
  }
-
-
-//  /* Style the icon using the attribute selector */
-//  ::ng-deep .button [arielle-button-icon] svg{
-
-//   // .svg-inline--fa{
-//   //   margin-right: 8px !important; /* Adjust spacing between icon and text */
-//   //   font-size: 16px;   /* Adjust icon size */
-//   //   // vertical-align: middle; /* Align icon with text */
-//   // 
-//     margin-right: 8px !important; /* Adjust spacing between icon and text */
-//     font-size: 16px;   /* Adjust icon size */
-  
-//   // margin-right: 8px !important; /* Adjust spacing between icon and text */
-//   // font-size: 16px;   /* Adjust icon size */
-//   // vertical-align: middle; /* Align icon with text */
-// }
-
-// ::ng-deep .button [arielle-button-icon]:last-child svg {
-//   margin-right: 8px !important; /* Adjust spacing between icon and text */
-// }
 
