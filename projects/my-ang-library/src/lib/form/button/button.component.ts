@@ -24,6 +24,8 @@ export class ButtonComponent implements AfterViewInit {
   @Input() enableModal: boolean = false;
   @Input() primary2: boolean = false;
   @Input() rippleEffect: boolean = true;
+  @Input() buttonMinimalist: boolean = false;
+  @Input() buttonExtended : boolean = false;
   displayStyle: string = 'none';
   isRippleActive: boolean = false;
   @ViewChild('FormButtonRef', { static: true }) buttonRef!: ElementRef; // Reference to the button element
@@ -52,6 +54,12 @@ export class ButtonComponent implements AfterViewInit {
     }
     if (this.primary2) {
       this.renderer.setAttribute(this.buttonRef.nativeElement, 'primary2', '');
+    }
+    if (this.buttonMinimalist) {
+      this.renderer.setAttribute(this.buttonRef.nativeElement, 'buttonMinimalist', '');
+    }
+    if (this.buttonExtended) {
+      this.renderer.setAttribute(this.buttonRef.nativeElement, 'buttonExtended', '');
     }
   }
 
