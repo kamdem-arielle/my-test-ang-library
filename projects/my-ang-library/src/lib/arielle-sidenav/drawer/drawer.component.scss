@@ -1,0 +1,19 @@
+.drawer-container{
+    position: relative;
+    top: 0;
+    padding: 20px 0 20px 8px;
+    width: 260px;
+    max-height: 100vh;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.3s;
+    z-index: 2500;
+}
+
+.drawer-container[default]{
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-gap: 40px;
+    color: var(--drawer-text-color);
+    background-color: var(--drawer-bg-color);
+}

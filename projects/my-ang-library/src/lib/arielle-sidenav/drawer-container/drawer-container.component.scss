@@ -1,6 +1,7 @@
+@use "../../../../themes/variables" as *;
 .main-layout {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: $main-layout-grid-template-column;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   max-height: 100vh;

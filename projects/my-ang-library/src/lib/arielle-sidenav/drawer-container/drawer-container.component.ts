@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'arielle-drawer-container',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './drawer-container.component.scss'
 })
 export class DrawerContainerComponent {
+  
 
 }

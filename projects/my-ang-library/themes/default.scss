@@ -1,10 +1,15 @@
 
+//  SCSS variables for the default button theme
 $button-primary-bg-color: #004A87;
 $button-primary2-bg-color:#4AC0E4;
 $button-alert-bg-color: #E54617;
 $button-call-modal-bg-color: #45B90A;
 $button-enable-modal-bg-color: #0F7CFF;
 $button-text-color: #ffffff;
+
+//  SCSS variables for the default drawer theme
+$drawer-bg-color: #004A87;
+$drawer-text-color: #ffffff;
 
 
 :root {
@@ -14,4 +19,14 @@ $button-text-color: #ffffff;
   --button-call-modal-bg-color:#{$button-call-modal-bg-color};
   --button-enable-modal-bg-color:#{$button-enable-modal-bg-color};
   --button-text-color: #{$button-text-color};
+  --drawer-bg-color: #{$drawer-bg-color};
+  --drawer-text-color: #{$drawer-text-color};
+}
+
+// Styles for the drawer positioning on the screen with respect to the drawer-container grid property
+arielle-drawer[positionLeft]{
+  grid-column: 1 / 2;
+}
+arielle-drawer[positionRight]{
+  grid-column: 2 / 3;
 }
