@@ -23,7 +23,7 @@ export class DrawerComponent {
   @Input() width!: number;
   @Input() default!: boolean;
   collapsed!: boolean;
-  iconCollapse: boolean = false;
+  iconCollapse!: boolean;
   faAnglesRight = faAnglesRight;
   faAnglesLeft = faAnglesLeft;
   @ViewChild('drawerContainer', { static: false }) drawerContainer!: ElementRef;
@@ -42,6 +42,16 @@ export class DrawerComponent {
         'width',
         `${this.width}px`
       );
+    }
+  }
+
+  ngOnInit() {
+    if (window.innerWidth>991) {
+      console.log("button left ")
+      this.iconCollapse=false;
+    }else{
+      console.log("button right")
+      this.iconCollapse=true
     }
   }
 
@@ -82,9 +92,9 @@ export class DrawerComponent {
     var sidebar = document.querySelector('.drawer-container');
     var collapsing_shadow = document.querySelector('.collapsing_shadow');
     if (window.innerWidth > 991) {
-      this.iconCollapse = true;
-    } else if (window.innerWidth < 991) {
       this.iconCollapse = false;
+    } else if (window.innerWidth < 991) {
+      this.iconCollapse = true;
     }
     sidebar!.classList.remove('openSideBar');
     sidebar!.classList.remove('closeSideBarLargeScreen');

@@ -7,10 +7,11 @@
             }@else{
                 <fa-icon [icon]="faAnglesLeft" ></fa-icon>
             }
-            <span>{{ "Collapse sidebar"}}</span>
+            <span class="ml-1">{{ "Collapse sidebar"}}</span>
         </div>
-        <div class="collapsing_shadow" [ngClass]="{ openSideBar: collapsed }" (click)="toggleCollapsed()"></div>
+        
     </div>
  <ng-content>
  </ng-content>
 </div>
+<div class="collapsing_shadow" [ngClass]="{ openSideBar: collapsed }" (click)="toggleCollapsed()"></div>
