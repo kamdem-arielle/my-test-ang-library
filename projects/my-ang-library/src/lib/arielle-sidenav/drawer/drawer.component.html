@@ -1,3 +1,16 @@
 <div #drawerContainer class="drawer-container">
-    <ng-content></ng-content>
+ <ng-content>
+    <div class="drawer-default-content-cont">
+
+        <div class="toggle-button"  (click)="toggleCollapsed()">
+            @if(iconCollapse){
+                <fa-icon [icon]="faAnglesRight"></fa-icon>
+            }@else{
+                <fa-icon [icon]="faAnglesLeft" ></fa-icon>
+            }
+            <span>{{ "Collapse sidebar"}}</span>
+        </div>
+        <div class="collapsing_shadow" [ngClass]="{ openSideBar: collapsed }" (click)="toggleCollapsed()"></div>
+    </div>
+ </ng-content>
 </div>
