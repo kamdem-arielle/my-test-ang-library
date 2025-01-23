@@ -76,4 +76,18 @@ export class DrawerComponent {
       this.iconCollapse = true;
     }
   }
+
+  //function to remove all additional classes on sidebar on window resize
+  onResize($event:any){
+    var sidebar = document.querySelector('.drawer-container');
+    var collapsing_shadow = document.querySelector('.collapsing_shadow');
+    if (window.innerWidth > 991) {
+      this.iconCollapse = true;
+    } else if (window.innerWidth < 991) {
+      this.iconCollapse = false;
+    }
+    sidebar!.classList.remove('openSideBar');
+    sidebar!.classList.remove('closeSideBarLargeScreen');
+    collapsing_shadow!.classList.remove('openSideBar');
+  }
 }

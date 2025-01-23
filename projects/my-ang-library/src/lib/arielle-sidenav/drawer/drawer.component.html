@@ -1,5 +1,4 @@
-<div #drawerContainer class="drawer-container">
- <ng-content>
+<div #drawerContainer class="drawer-container" (window:resize)="onResize($event)">
     <div class="drawer-default-content-cont">
 
         <div class="toggle-button"  (click)="toggleCollapsed()">
@@ -12,5 +11,6 @@
         </div>
         <div class="collapsing_shadow" [ngClass]="{ openSideBar: collapsed }" (click)="toggleCollapsed()"></div>
     </div>
+ <ng-content>
  </ng-content>
 </div>
