@@ -38,17 +38,16 @@ export class DrawerComponent {
     this.navBarLinks = [
       {
         name: 'Home',
-        route: 'home',
+        route: '/',
         icon: 'ic_home',
         sublinks: []
       },
       {
         name: 'Profile',
-        route: 'profile',
         icon: 'ic_profile',
         sublinks: [
-          { name: 'Settings',route: 'settings', icon: 'ic_settings' },
-          { name: 'Logout',route: 'logout', icon: 'ic_logout' }
+          { name: 'Settings',route: '/', icon: 'ic_settings' },
+          { name: 'Logout',route: '/', icon: 'ic_logout' }
         ]
       },
       // Add more links as needed
