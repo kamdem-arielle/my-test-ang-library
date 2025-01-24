@@ -1,3 +1,5 @@
+@use "../../../../themes/variables" as *;
+
 ::ng-deep .drawer-container {
   position: relative;
   top: 0;
@@ -10,22 +12,81 @@
   color: var(--drawer-text-color);
   background-color: var(--drawer-bg-color);
 
-  &.closeSideBarLargeScreen {
-    width: 70px;
-  }
-  &.openSideBar {
-    width: 250px !important;
-
-    span {
-      display: inline-block;
-    }
-  }
-
   .drawer-default-content-cont {
     display: grid;
     grid-template-rows: auto auto 1fr;
     grid-gap: 40px;
-    padding: 20px 0 20px 8px;
+    padding: 20px 8px;
+    font-family: "Avenir Rounded", sans-serif !important;
+
+    .nav_sidebar-logout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 1;
+      width: 100%;
+      padding: 10px 14px;
+      height: 40px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .nested-menu {
+      .list-group-item {
+        cursor: pointer;
+      }
+      .nested {
+        list-style-type: none;
+      }
+      ul.submenu {
+        display: none;
+        height: 0;
+        margin-top: 10px;
+      }
+    }
+
+    .nested-menu > li.expand > ul.submenu {
+      display: block;
+      list-style-type: none;
+      height: auto;
+
+      a {
+        color: #fff;
+        display: block;
+        margin: 5px 0px;
+      }
+    }
+
+    .nested-menu > a:not(.mm-next):after {
+      content: "\002B";
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      top: 14px;
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0s;
+    }
+
+    .sidebar
+      .nested-menu:has(.router-link-active)
+      a.list-group-item#nested-link {
+      background-color: #4ac0e4 !important;
+      opacity: 1 !important;
+    }
+
+    .active > a:not(.mm-next):after {
+      content: "\002D";
+    }
 
     .toggle-button {
       cursor: pointer;
@@ -35,21 +96,46 @@
       bottom: 0;
       color: var(--drawer-text-color);
       width: 100%;
-      height: 20px;
+      //   height: 20px;
       overflow: hidden;
       span {
-        font-size: 16px !important;
+        font-size: 17px !important;
         margin-bottom: 3px;
-        margin-left: 5px;
       }
       svg {
-        font-size: 23px;
+        font-size: 20px;
+        margin-right: 4px;
       }
     }
     @media screen and (max-width: 992px) {
       span {
         display: none;
       }
+      .nested-menu > li.expand > ul.submenu {
+        display: none;
+      }
+    }
+  }
+
+  &.closeSideBarLargeScreen {
+    width: 70px;
+
+    .nested-menu > li.expand > ul.submenu {
+      display: none;
+    }
+    span {
+      display: none !important;
+    }
+  }
+  &.openSideBar {
+    width: 250px !important;
+    .nested-menu > li.expand > ul.submenu {
+      padding-left: 2rem !important;
+      display: block !important;
+    }
+
+    span {
+      display: inline-block !important;
     }
   }
 
@@ -80,4 +166,22 @@
     opacity: 1;
     z-index: 1000;
   }
+}
+
+// Common classes for ic icons
+.ic {
+  display: block;
+  transition: 0.3s;
+  -webkit-mask: no-repeat center center;
+  mask: no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.ic_logout {
+  min-width: 25px;
+  height: 20px;
+  -webkit-mask-image: url("../../../../assets/icons/ic/ic_logout.svg");
+  mask-image: url("../../../../assets/icons/ic/ic_logout.svg");
+  background-color: $c_white;
 }

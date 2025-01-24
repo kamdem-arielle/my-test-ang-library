@@ -1,4 +1,5 @@
 
+
 //  SCSS variables for the default button theme
 $button-primary-bg-color: #004A87;
 $button-primary2-bg-color:#4AC0E4;
@@ -24,9 +25,14 @@ $drawer-text-color: #ffffff;
 }
 
 // Styles for the drawer positioning on the screen with respect to the drawer-container grid property
-arielle-drawer[positionLeft]{
+arielle-drawer{
+  grid-row: 1 / 4;
   grid-column: 1 / 2;
 }
 arielle-drawer[positionRight]{
   grid-column: 2 / 3;
+}
+
+.highlight{
+  grid-template-columns: 1fr auto !important;
 }

@@ -1,17 +1,72 @@
 <div #drawerContainer class="drawer-container" (window:resize)="onResize($event)">
     <div class="drawer-default-content-cont">
-
-        <div class="toggle-button"  (click)="toggleCollapsed()">
+        <div class="list-group">
+            @for(item of navBarLinks;track item.name){
+                @if(item.sublinks.length >0){
+                    <div class="nested-menu"  >
+                        <a class="list-group-item" id="nested-link" (click)="onActive($event)" (click)="addExpandClass(item.name)"  >
+                          <i class="fa fa-cog"></i>
+                          <span>{{ item.name }}</span>
+                        </a>
+                        <li class="nested" [class.expand]="showMenu === item.name">
+                          <ul class="submenu">
+                            @for(sublink of item.sublinks;track sublink.name){
+                                <a [routerLink]="sublink.route" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                
+                                    <span><i class="fa fa-user-secret"></i>{{ sublink.name }}</span>
+                                  </a>  
+                            }
+                              <!-- <a [routerLink]="['/access']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                
+                                <span><i class="fa fa-user-secret"></i>{{ "Access control" | translate }}</span>
+                              </a>  
+                              <a *ngIf="core.userHasPermission('VIEWMBOXES')" [routerLink]="['/mailboxes']"
+                                [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                
+                                <span><i class="fa fa-envelope-open"></i>{{ "Mailboxes" | translate }}</span>
+                              </a>
+                              <a [routerLink]="['/generalsetting']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                
+                                <span><i class="fa fa-wrench"></i>{{ "General" | translate }}</span>
+                              </a> -->
+                          </ul>
+                        </li>
+                      </div>
+                }@else {
+                    <a [routerLink]="item.route" [routerLinkActive]="['router-link-active']" class="list-group-item" >
+                        <i class="fa fa-home"></i>
+                        <span>{{item.name }}</span>
+                    </a>
+                }
+            }
+         
+        </div>
+        <div class="nav_bottom">
+            <a href="javascript:void(0);" class="nav_sidebar-logout">
+                <i class="ic ic_logout"></i>
+                <span>{{ "Log out"}}</span>
+            </a>
+            <!-- <div class="toggle-button"  (click)="toggleCollapsed()">
+              <i class="fa fa-fw fa-angle-double-{{ !iconCollapse ? 'right' : 'left' }}"></i>&nbsp;
+              <span>{{ "Collapse sidebar" | translate }}</span>
+            </div> -->
+            <!-- <div class="toggle-button"  (click)="toggleCollapsed()">
+              <i *ngIf="core.iconCollapse" class="fa fa-fw fa-angle-double-right"></i>
+              <i *ngIf="!core.iconCollapse" class="fa fa-fw fa-angle-double-left"></i>
+              <span>{{ "Collapse sidebar" | translate }}</span>
+            </div> -->
+        </div>
+        <div class="toggle-button" (click)="toggleCollapsed()">
             @if(iconCollapse){
-                <fa-icon [icon]="faAnglesRight"></fa-icon>
+            <fa-icon [icon]="faAnglesRight"></fa-icon>
             }@else{
-                <fa-icon [icon]="faAnglesLeft" ></fa-icon>
+            <fa-icon [icon]="faAnglesLeft"></fa-icon>
             }
             <span>{{ "Collapse sidebar"}}</span>
         </div>
-        
+
     </div>
- <ng-content>
- </ng-content>
+    <ng-content>
+    </ng-content>
 </div>
 <div class="collapsing_shadow" [ngClass]="{ openSideBar: collapsed }" (click)="toggleCollapsed()"></div>
