@@ -36,6 +36,9 @@
     }
     .list-group {
       padding-right: 15px;
+      display: grid;
+      grid-gap: 8px;
+
 
       a.list-group-item {
         position: relative;

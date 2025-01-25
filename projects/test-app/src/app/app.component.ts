@@ -15,6 +15,41 @@ import { DrawerComponent } from "../../../my-ang-library/src/lib/arielle-sidenav
 export class AppComponent {
   title = 'test-app';
   faCoffee = faPlus;
+  navBarLinks = [
+    {
+      name: 'Home',
+      route: 'home',
+      icon: 'ic_home',
+      sublinks: []
+    },
+    {
+      name: 'Serivices',
+      route: 'home',
+      icon: 'ic_home',
+      sublinks: []
+    },
+    {
+      name: 'Policies',
+      route: 'home',
+      icon: 'ic_home',
+      sublinks: []
+    },
+    {
+      name: 'Diagnosis',
+      route: 'home',
+      icon: 'ic_home',
+      sublinks: []
+    },
+    {
+      name: 'Profile',
+      icon: 'ic_profile',
+      sublinks: [
+        { name: 'Settings',route: 'settings', icon: 'ic_settings' },
+        { name: 'Logout',route: '/', icon: 'ic_logout' }
+      ]
+    },
+    // Add more links as needed
+  ];
 
   goToPether() {
     window.open('https://pether.tech', '_blank');
