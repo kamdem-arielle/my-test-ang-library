@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MyAngLibraryComponent,ButtonComponent,FormModule,ArielleSidenavModule} from 'my-ang-library';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus,faHome,faAddressCard,faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import { DrawerComponent } from "../../../my-ang-library/src/lib/arielle-sidenav/drawer/drawer.component";
 
 @Component({
@@ -19,13 +19,13 @@ export class AppComponent {
     {
       name: 'Home',
       route: 'home',
-      icon: 'ic_home',
+      icon: faHome,
       sublinks: []
     },
     {
       name: 'Serivices',
       route: 'home',
-      icon: 'ic_home',
+      icon: faHome,
       sublinks: []
     },
     {
@@ -37,15 +37,15 @@ export class AppComponent {
     {
       name: 'Diagnosis',
       route: 'home',
-      icon: 'ic_home',
+      icon: faAddressCard,
       sublinks: []
     },
     {
       name: 'Profile',
-      icon: 'ic_profile',
+      icon: faAddressCard,
       sublinks: [
-        { name: 'Settings',route: 'settings', icon: 'ic_settings' },
-        { name: 'Logout',route: '/', icon: 'ic_logout' }
+        { name: 'Settings',route: 'settings', icon: faCalendarCheck },
+        { name: 'Logout',route: '/', icon: faCalendarCheck }
       ]
     },
     // Add more links as needed

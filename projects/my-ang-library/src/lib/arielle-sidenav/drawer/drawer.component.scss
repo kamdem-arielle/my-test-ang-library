@@ -96,7 +96,7 @@
         }
 
         &#nested-link {
-          &:after {
+          & span:after {
             content: "";
             position: absolute;
             top: 50%;
@@ -111,7 +111,7 @@
             transition: 0.3s;
           }
 
-          &.active::after {
+          &.active span:after {
             transform: translateY(-50%) rotate(45deg);
           }
         }

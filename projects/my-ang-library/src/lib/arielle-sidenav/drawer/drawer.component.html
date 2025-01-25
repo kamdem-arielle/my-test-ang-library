@@ -12,8 +12,8 @@
                           <ul class="submenu">
                             @for(sublink of item.sublinks;track sublink.name){
                                 <a [routerLink]="sublink.route" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                                
-                                    <span><i class="fa fa-user-secret"></i>{{ sublink.name }}</span>
+                                    <fa-icon [icon]="item.icon"></fa-icon>
+                                    <span>{{ sublink.name }}</span>
                                   </a>  
                             }
                               <!-- <a [routerLink]="['/access']" [routerLinkActive]="['router-link-active']" class="list-group-item">
