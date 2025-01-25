@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MyAngLibraryComponent,ButtonComponent,FormModule,ArielleSidenavModule} from 'my-ang-library';
+import { MyAngLibraryComponent, ButtonComponent, FormModule, ArielleSidenavModule } from 'my-ang-library';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlus,faHome,faAddressCard,faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faHome, faAddressCard, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import { DrawerComponent } from "../../../my-ang-library/src/lib/arielle-sidenav/drawer/drawer.component";
 
 @Component({
@@ -44,8 +44,8 @@ export class AppComponent {
       name: 'Profile',
       icon: faAddressCard,
       sublinks: [
-        { name: 'Settings',route: 'settings', icon: faCalendarCheck },
-        { name: 'Logout',route: '/', icon: faCalendarCheck }
+        { name: 'Settings', route: 'settings', icon: faCalendarCheck },
+        { name: 'Logout', route: '/', icon: faCalendarCheck }
       ]
     },
     // Add more links as needed

@@ -1,27 +1,27 @@
 <div #drawerContainer class="drawer-container" (window:resize)="onResize($event)">
-    <div class="drawer-default-content-cont">
-      <a href="/" class="nav_sidebar-logo">
-        <img [src]="appLogoBigSrc" class="logo-big" />
-        <img [src]="appLogoSmallSrc" class="logo-min" />
-      </a>
+  <div class="drawer-default-content-cont">
+    <a href="/" class="nav_sidebar-logo">
+      <img [src]="appLogoBigSrc" class="logo-big" />
+      <img [src]="appLogoSmallSrc" class="logo-min" />
+    </a>
 
-        <div class="list-group">
-            @for(item of navBarLinks;track item.name){
-                @if(item.sublinks.length >0){
-                    <div class="nested-menu"  >
-                        <a class="list-group-item" id="nested-link" (click)="onActive($event)" (click)="addExpandClass(item.name)"  >
-                          <fa-icon [icon]="item.icon"></fa-icon>
-                          <span>{{ item.name }}</span>
-                        </a>
-                        <li class="nested" [class.expand]="showMenu === item.name">
-                          <ul class="submenu">
-                            @for(sublink of item.sublinks;track sublink.name){
-                                <a [routerLink]="sublink.route" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                                    <fa-icon [icon]="sublink.icon"></fa-icon>
-                                    <span>{{ sublink.name }}</span>
-                                  </a>  
-                            }
-                              <!-- <a [routerLink]="['/access']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <div class="list-group">
+      @for(item of navBarLinks;track item.name){
+      @if(item.sublinks.length >0){
+      <div class="nested-menu">
+        <a class="list-group-item" id="nested-link" (click)="onActive($event)" (click)="addExpandClass(item.name)">
+          <fa-icon [icon]="item.icon"></fa-icon>
+          <span>{{ item.name }}</span>
+        </a>
+        <li class="nested" [class.expand]="showMenu === item.name">
+          <ul class="submenu">
+            @for(sublink of item.sublinks;track sublink.name){
+            <a [routerLink]="sublink.route" [routerLinkActive]="['router-link-active']" class="list-group-item">
+              <fa-icon [icon]="sublink.icon"></fa-icon>
+              <span>{{ sublink.name }}</span>
+            </a>
+            }
+            <!-- <a [routerLink]="['/access']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                                 
                                 <span><i class="fa fa-user-secret"></i>{{ "Access control" | translate }}</span>
                               </a>  
@@ -34,46 +34,46 @@
                                 
                                 <span><i class="fa fa-wrench"></i>{{ "General" | translate }}</span>
                               </a> -->
-                          </ul>
-                        </li>
-                      </div>
-                }@else {
-                    <a [routerLink]="item.route" [routerLinkActive]="['router-link-active']" class="list-group-item" >
-                        <fa-icon [icon]="item.icon"></fa-icon>
-                        <span>{{item.name }}</span>
-                    </a>
-                }
-            }
-         
-        </div>
-        <div class="nav_bottom">
-            <a href="javascript:void(0);" class="nav_sidebar-logout">
-                <i class="ic ic_logout"></i>
-                <span>{{ "Log out"}}</span>
-            </a>
-            <!-- <div class="toggle-button"  (click)="toggleCollapsed()">
+          </ul>
+        </li>
+      </div>
+      }@else {
+      <a [routerLink]="item.route" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <fa-icon [icon]="item.icon"></fa-icon>
+        <span>{{item.name }}</span>
+      </a>
+      }
+      }
+
+    </div>
+    <div class="nav_bottom">
+      <a href="javascript:void(0);" class="nav_sidebar-logout">
+        <i class="ic ic_logout"></i>
+        <span>{{ "Log out"}}</span>
+      </a>
+      <!-- <div class="toggle-button"  (click)="toggleCollapsed()">
               <i class="fa fa-fw fa-angle-double-{{ !iconCollapse ? 'right' : 'left' }}"></i>&nbsp;
               <span>{{ "Collapse sidebar" | translate }}</span>
             </div> -->
-            <!-- <div class="toggle-button"  (click)="toggleCollapsed()">
+      <!-- <div class="toggle-button"  (click)="toggleCollapsed()">
               <i *ngIf="core.iconCollapse" class="fa fa-fw fa-angle-double-right"></i>
               <i *ngIf="!core.iconCollapse" class="fa fa-fw fa-angle-double-left"></i>
               <span>{{ "Collapse sidebar" | translate }}</span>
             </div> -->
 
-            <div class="toggle-button" (click)="toggleCollapsed()">
-              @if(iconCollapse){
-              <fa-icon [icon]="faAnglesRight"></fa-icon>
-              }@else{
-              <fa-icon [icon]="faAnglesLeft"></fa-icon>
-              }
-              <span>{{ "Collapse sidebar"}}</span>
-          </div>
-        </div>
-       
-
+      <div class="toggle-button" (click)="toggleCollapsed()">
+        @if(iconCollapse){
+        <fa-icon [icon]="faAnglesRight"></fa-icon>
+        }@else{
+        <fa-icon [icon]="faAnglesLeft"></fa-icon>
+        }
+        <span>{{ "Collapse sidebar"}}</span>
+      </div>
     </div>
-    <ng-content>
-    </ng-content>
+
+
+  </div>
+  <ng-content>
+  </ng-content>
 </div>
 <div class="collapsing_shadow" [ngClass]="{ openSideBar: collapsed }" (click)="toggleCollapsed()"></div>

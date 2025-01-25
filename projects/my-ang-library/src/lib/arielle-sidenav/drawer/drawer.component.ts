@@ -6,15 +6,15 @@ import {
   ViewChild,
   viewChild,
 } from '@angular/core';
-import { faAnglesRight,faAnglesLeft,} from '@fortawesome/free-solid-svg-icons';
+import { faAnglesRight, faAnglesLeft, } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {NgClass} from '@angular/common';
+import { NgClass } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 
 @Component({
   selector: 'arielle-drawer',
-  imports: [NgClass,FontAwesomeModule,RouterLink,RouterLinkActive ],
+  imports: [NgClass, FontAwesomeModule, RouterLink, RouterLinkActive],
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.scss',
 })
@@ -23,27 +23,27 @@ export class DrawerComponent {
   @Input() mode = 'side';
   @Input() width!: number;
   @Input() default!: boolean;
-  @Input() appLogoBigSrc :any;
-  @Input() appLogoSmallSrc :any;
-  @Input() navBarLinks:any = [];
+  @Input() appLogoBigSrc: any;
+  @Input() appLogoSmallSrc: any;
+  @Input() navBarLinks: any = [];
   collapsed!: boolean;
   iconCollapse!: boolean;
   faAnglesRight = faAnglesRight;
   faAnglesLeft = faAnglesLeft;
-  classActive :any;
-  showMenu:string='';
+  classActive: any;
+  showMenu: string = '';
   @ViewChild('drawerContainer', { static: false }) drawerContainer!: ElementRef;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  constructor(private renderer: Renderer2, private el: ElementRef) { }
 
   ngOnInit() {
 
-    if (window.innerWidth>991) {
+    if (window.innerWidth > 991) {
       console.log("button left ")
-      this.iconCollapse=false;
-    }else{
+      this.iconCollapse = false;
+    } else {
       console.log("button right")
-      this.iconCollapse=true
+      this.iconCollapse = true
     }
   }
 
@@ -69,7 +69,7 @@ export class DrawerComponent {
     }
   }
 
-  
+
 
   toggleCollapsed() {
     var sidebar = document.querySelector('.drawer-container');
@@ -104,7 +104,7 @@ export class DrawerComponent {
   }
 
   //function to remove all additional classes on sidebar on window resize
-  onResize($event:any){
+  onResize($event: any) {
     var sidebar = document.querySelector('.drawer-container');
     var collapsing_shadow = document.querySelector('.collapsing_shadow');
     if (window.innerWidth > 991) {
@@ -119,7 +119,7 @@ export class DrawerComponent {
 
   onActive(event: Event) {
     let element = event.target as HTMLElement;
-    var sidebar =document.querySelector(".drawer-container");
+    var sidebar = document.querySelector(".drawer-container");
     if (window.innerWidth < 991 && !sidebar!.classList.contains("openSideBar")) {
       this.toggleCollapsed()
     }
