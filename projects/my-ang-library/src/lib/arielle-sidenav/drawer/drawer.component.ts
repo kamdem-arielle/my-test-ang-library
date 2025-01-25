@@ -35,24 +35,6 @@ export class DrawerComponent {
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit() {
-    this.navBarLinks = [
-      {
-        name: 'Home',
-        route: '/',
-        icon: 'ic_home',
-        sublinks: []
-      },
-      {
-        name: 'Profile',
-        icon: 'ic_profile',
-        sublinks: [
-          { name: 'Settings',route: '/', icon: 'ic_settings' },
-          { name: 'Logout',route: '/', icon: 'ic_logout' }
-        ]
-      },
-      // Add more links as needed
-    ];
-
 
     if (window.innerWidth>991) {
       console.log("button left ")
