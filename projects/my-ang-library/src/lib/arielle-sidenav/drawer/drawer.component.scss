@@ -18,6 +18,7 @@
     grid-gap: 40px;
     padding: 20px 8px;
     font-family: "Avenir Rounded", sans-serif !important;
+    height: 100%;
 
     .nav_sidebar-logout {
       display: flex;
@@ -34,11 +35,29 @@
       cursor: pointer;
       text-decoration: none;
     }
+    .nav_sidebar-logo{
+      display: flex;
+      justify-content: center;
+
+      .logo-big{
+        width: 100px;
+        /* margin-right: 15px; */
+      }
+  
+      .logo-min{
+        display: none;
+        width: 40px;
+      }
+    }
+
+
     .list-group {
       padding-right: 15px;
       display: grid;
       grid-gap: 8px;
-
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      scrollbar-color: #004A87 #ffffff;
 
       a.list-group-item {
         position: relative;
@@ -151,26 +170,33 @@
       }
     }
 
+    .nav_bottom{
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 40px;
 
-    .toggle-button {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      bottom: 0;
-      color: var(--drawer-text-color);
-      width: 100%;
-      //   height: 20px;
-      overflow: hidden;
-      span {
-        font-size: 17px !important;
-        margin-bottom: 3px;
-      }
-      svg {
-        font-size: 20px;
-        margin-right: 4px;
+      .toggle-button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        color: var(--drawer-text-color);
+        width: 100%;
+        //   height: 20px;
+        overflow: hidden;
+        span {
+          font-size: 17px !important;
+          margin-bottom: 3px;
+        }
+        svg {
+          font-size: 20px;
+          margin-right: 4px;
+        }
       }
     }
+   
+
     @media screen and (max-width: 992px) {
       span {
         display: none;
@@ -178,6 +204,21 @@
       .nested-menu > li.expand > ul.submenu {
         display: none;
       }
+      .list-group{
+        padding-right: 0px;
+      }
+      .nav_sidebar-logo{
+
+        .logo-min{
+          display: block;
+        }
+        .logo-big{
+          display: none;
+        }
+
+      }
+ 
+
     }
   }
 
@@ -190,7 +231,20 @@
     span {
       display: none !important;
     }
-  }
+    .list-group{
+      padding-right: 0px;
+    }
+    .nav_sidebar-logo{
+      .logo-big{
+        display: none;
+      }
+      .logo-min{
+        display: block;
+      }
+    }
+
+}
+
   &.openSideBar {
     width: 250px !important;
     .nested-menu > li.expand > ul.submenu {
@@ -201,6 +255,16 @@
     span {
       display: inline-block !important;
     }
+
+    .nav_sidebar-logo{
+      .logo-min{
+        display: none;
+      }
+      .logo-big{
+        display: block;
+      }
+    }
+
   }
 
   @media screen and (max-width: 992px) {

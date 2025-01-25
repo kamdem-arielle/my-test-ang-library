@@ -31,7 +31,7 @@ export class AppComponent {
     {
       name: 'Policies',
       route: 'home',
-      icon: 'ic_home',
+      icon: faHome,
       sublinks: []
     },
     {

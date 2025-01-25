@@ -23,6 +23,8 @@ export class DrawerComponent {
   @Input() mode = 'side';
   @Input() width!: number;
   @Input() default!: boolean;
+  @Input() appLogoBigSrc :any;
+  @Input() appLogoSmallSrc :any;
   @Input() navBarLinks:any = [];
   collapsed!: boolean;
   iconCollapse!: boolean;
